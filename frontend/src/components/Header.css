@@ -1,0 +1,81 @@
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position:sticky;
+    top:0;
+    background-color: white;
+    width: 100%;
+    z-index: 100;
+}
+
+.header_icon{
+    object-fit: contain;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.header_center{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    max-width: fit-content;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-radius: 99px;
+}
+
+form:hover {
+            
+    /* Styling for search bar when we hover on
+      it to show the shadow of the search bar
+    The attributes for box-shadow are:
+    offset-x | offset-y | blur-radius | color */
+    box-shadow: 0px 1px 3px rgb(192, 185, 185);
+
+    /* You can play with these values to
+    get your desired shadow effect */
+}
+.header_center>input{
+    border: none;
+    padding: 2px;
+    outline-width: 0;
+    width: 280px;
+}
+
+.header_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 15vw;
+    margin-right: 80px;
+}
+
+.header_right>p{
+    margin-bottom: 0;
+}
+
+ @media only screen 
+ and (max-device-width: 600px)
+ {
+    .header_icon{
+        margin-left: 2%;
+        
+    }
+    .header_center>input{
+       
+        border: none;
+        padding: 2px;
+        outline-width: 0;
+        width: 135px;
+    }
+    .header_center{
+        margin-left: 1px;
+        align-self: center;
+        /* margin-left: 1.5rem; */
+      /* margin-top: 25px; */
+    }
+    
+ } 
