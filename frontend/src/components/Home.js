@@ -15,6 +15,7 @@ import Product from "./Product.js"
 import Loader from "./Loader/Loader.js"
 import { useAlert } from "react-alert";
 
+
 function createcard(information) {
   return (
     // console.log(information.price)
@@ -64,6 +65,7 @@ function Home() {
       <MetaData title="🏠 ℋeaven ℋomes" />
      
       <div className="home">
+        
         <Banner />
        
         {/* <div className="home_section">

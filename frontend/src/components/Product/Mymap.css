@@ -1,0 +1,9 @@
+.mp{
+    height: 100vh;
+    text-align: center;
+    /* align-content: center; */
+    border: 5px solid red;
+    padding: 5px;
+    font-weight: 800;
+  margin: 50px;
+}

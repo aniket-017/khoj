@@ -1,7 +1,7 @@
 .card{
     margin: 10px;
     width : 300px;
-    /* height: 350px; */
+    height: 380px; /*This was commented after adding sahaydri hostel uncommented rember tulshiram thr... */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
@@ -26,15 +26,21 @@
     border-radius: 10px;
     padding: 20px;
     padding-top: 20px;
-
+    /* color:#ff7779; */
+    color:black;
+    font-family: 'Phudu', cursive; 
 }
 
 .card_info > h2{
+    font-family:'Phudu', cursive;
+    /* color:black; */
+    /* color:#ff7779; */
     font-size: 18px;
     font-weight: 600;
 }
 
 .card_info > h4{
+    color:#ff7779;
     font-size: 14px;
     font-weight: 300;
     margin-top: 8px;

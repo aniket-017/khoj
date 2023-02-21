@@ -28,7 +28,7 @@ function Header() {
             placeholder="Search the accomodation"
             onChange={(e) => setkeyword(e.target.value)}
           />
-          <input type="submit" value="Click Me"></input>
+          {/* <input type="submit" value="Click Me"></input> */}
           <SearchIcon></SearchIcon>
          
           

@@ -161,13 +161,13 @@
   }
   .LoginSignUpBox {
     width: 100vw;
-    height: 95vh;
+    height: 80vh;
   }
   .login_signUp_toggle {
     height: 5vmax;
   }
   .login_signUp_toggle > p {
-    font: 300 1.5vmax "Roboto";
+    font: 900 2.5vmax 'Acme', sans-serif;
   }
 
   .loginForm,
@@ -175,10 +175,15 @@
     padding: 5vmax;
   }
 
+  .forgotPassword{
+    font-weight: 900;
+font-family:'Russo One', sans-serif;
+  }
+
   .loginForm > div > input,
   .signUpForm > div > input {
     padding: 2.5vmax 5vmax;
-    font: 300 1.7vmax cursive;
+    font: 300 2.5vmax 'Acme', sans-serif;
   }
 
   .loginForm > div > svg,
@@ -202,7 +207,7 @@
 
   .loginBtn,
   .signUpBtn {
-    font: 300 1.9vmax "Roboto";
+    font: 300 2vmax 'Russo One', sans-serif;
     padding: 1.8vmax;
   }
 }

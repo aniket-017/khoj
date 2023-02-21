@@ -13,7 +13,10 @@ import Product from "../Product";
 import { Grid } from "@material-ui/core/";
 import {useParams} from 'react-router-dom';
 import Pagination from "react-js-pagination";
-
+import Aos from "aos";
+import "aos/dist/aos.css"
+import Mymap from "./Mymap.js"
+import Button from '@mui/material/Button';  
 
 const categories = [
   "Rented Rooms",
@@ -73,7 +76,7 @@ const Products = ({match}) => {
     <Fragment>{loading ? <Loader />:
    <Fragment>
    <MetaData title="Accomodations"/>
-   <h2 className="productsHeading">Productts</h2>
+   <h2 className="productsHeading">Accomodations On Rent</h2>
    <div className="aniket">
           <Grid
           
@@ -91,20 +94,22 @@ const Products = ({match}) => {
         <Product product = {product} />
         <Product product = {product} /> */}
 
-        {products && products.map((product) => <Product product={product}/>)}
+        {products && products.map((product) => <Product  product={product}/>)}
 
         </Grid>
     </div>
 
     <div className="filterBox">
+    <div className="filterBox_mobile">
             <h4>Price</h4>
             <Slider
+            className="slider_mobile"
               value={price}
               onChange={priceHandler}
-              valueLabelDisplay="auto" //on
+              valueLabelDisplay="on" //auto
               aria-labelledby="range-slider"
-              min={0}
-              max={25000}
+              min={500}
+              max={5000}
             />
 
             <h4>Categories</h4>
@@ -121,7 +126,7 @@ const Products = ({match}) => {
             </ul>
 
             <fieldset>
-              <p component="legend">Ratings Above</p>
+              <p component="legend">Ratings</p>
               <Slider
                 value={ratings}
                 onChange={(e, newRating) => {
@@ -133,7 +138,15 @@ const Products = ({match}) => {
                 max={5}
               />
             </fieldset>
+            </div>
     </div>
+
+    {/* <Button onClick={() => <Mymap/>}>Button</Button>
+    <button onClick={<Mymap/>}>aniket</button>
+              
+              <div>
+                <Mymap></Mymap>
+              </div> */}
 
     {resultPerPage < productsCount && (
             <div className="paginationBox">

@@ -11,7 +11,6 @@ import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 
 
-
 const LoginSignUp = ({history}) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -76,9 +75,11 @@ const LoginSignUp = ({history}) => {
     }
 
     if (isAuthenticated) {
-      history.push("/account");
+      window.location = "/account";
+      this.context.history.push("/");
+      history.push("/account"); //this is not working given 3 days to find out problem i was to cry now....
     }
-  }, [dispatch, error, alert,history ,isAuthenticated]);
+  }, [dispatch, error, alert, history ,isAuthenticated]);
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
@@ -129,7 +130,7 @@ const LoginSignUp = ({history}) => {
              onChange={(e) => setLoginPassword(e.target.value)}
            />
          </div>
-         <Link to="/password/forgot">Forget Password ?</Link>
+         <Link style={{fontFamily:'Oswald', fontSize:20, fontWeight:500}} to="/password/forgot">Forget Password ?</Link>
          <input type="submit" value="Login" className="loginBtn" />
        </form>
        {/* first comment */}

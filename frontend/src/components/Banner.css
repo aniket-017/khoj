@@ -37,7 +37,18 @@
 }
 
 @media screen and (max-width:992px) {
-    .banner{
-        
+    .banner_search{
+        display: flex;
+        flex-direction: column;
+        border: none;
+    }
+    .banner_searchButton{
+        border: none;
+        background-color: white !important;
+        font-weight: 900 !important;
+        text-transform: inherit !important;
+        color: #ff7779 !important;
+        padding:0;
+        margin:0;
     }
 }
