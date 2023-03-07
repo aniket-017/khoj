@@ -94,7 +94,20 @@
   .profileContainer > div:last-child > div:last-child > a:hover {
     background-color: rgb(31, 31, 31);
   }
+
+  .changePassword{
+    margin: 20px;
+  }
   .changePassword>a{
+    outline: auto black;
+    color: white;
+    font: 400 1vmax 'Russo One', sans-serif;
+    background-color: tomato;
+    
+    padding: 1vmax;
+  }
+
+  .Logout{
     outline: auto black;
     color: white;
     font: 400 1vmax 'Russo One', sans-serif;
@@ -103,7 +116,7 @@
   }
   @media screen and (max-width: 600px) {
     .profileContainer {
-      position: absolute;
+      /* position: absolute; */
       display: flex;
       flex-direction: column;
     }
@@ -167,6 +180,13 @@
     }
     .mobile{
       margin-bottom: 100px;
+    }
+    .Logout{
+      outline: auto black;
+      color: white;
+      background-color: tomato;
+      padding: 1vmax;
+      font: 400 2vmax 'Russo One', sans-serif;
     }
     
 

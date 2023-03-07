@@ -55,7 +55,7 @@ exports.getAllProducts = catchAsyncError(async (req, res) => {
  //   .pageination(resultPerPage);  
   let products = await apiFeatures.query;
 
-  let filteredProductsCount = products.lenght;
+  let filteredProductsCount = products.length;
 
   apiFeatures.pageination(resultPerPage);
 
@@ -71,6 +71,35 @@ exports.getAllProducts = catchAsyncError(async (req, res) => {
    
   });
 });
+
+//Get each and every product
+
+exports.getEachProducts = catchAsyncError(async (req, res) => {
+
+  const resultPerPage = 9;
+  const productsCount = await Product.countDocuments();
+
+  const products = await Product.find();
+  
+  res.status(200).json({
+    success: true,
+    products,  
+  });
+});
+
+
+// Reset Filters
+exports.resetFilters = catchAsyncError(async (req, res) => {
+  const products = await Product.find();
+  const productsCount = await Product.countDocuments();
+
+  res.status(200).json({
+    success: true,
+    products,
+    productsCount
+  });
+});
+
 
 //Get product details
 

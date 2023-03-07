@@ -22,15 +22,18 @@ import ForgotPassword from "./component/User/ForgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
 import Dashboard from "./component/admin/Dashboard.js"
 import NewProduct from "./component/admin/NewProduct";
+import NotHost from "./component/admin/NotHost.js";
+import NewProperty from "./component/admin/NewProperty";
 import FilterPage from "./FilterPage";
 import About from "./About.js"
+import Mymap from "../components/Product/Mymap";
 
 function App(params) {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
   
 
-  
+
 
   React.useEffect(() => {
     store.dispatch(loadUser());
@@ -41,7 +44,7 @@ function App(params) {
       <Router>
         {/* <Navigation /> */}
         {/* <Header /> */}
-        {isAuthenticated && <UserOptions user={user} />}
+        {/* {isAuthenticated && <UserOptions user={user} />} */}
         <Header2 />
        {/* <FilterPage /> */}
         <Routes>
@@ -69,9 +72,10 @@ function App(params) {
           
           <Route path="/admin/dashboard" element={isAuthenticated?<Dashboard />:<Profile />} />
 
-          <Route path="/admin/product" element={isAuthenticated?<NewProduct />:<Profile />} />
+          <Route path="/admin/product" element={isAuthenticated?<NewProduct/>:<NotHost />} />
           
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<Mymap />} />
           {/* <Route path="/account" element={<SearchPage />} /> */}
 
           {/* <Route path="/" element={<Home />} /> */}

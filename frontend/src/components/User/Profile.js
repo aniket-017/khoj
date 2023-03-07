@@ -5,16 +5,22 @@ import MetaData from '../layout/MetaData';
 import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 import "./Profile.css";
+import { useDispatch } from "react-redux";
+import { logout } from '../../actions/userAction';
 
 const Profile = ({ history }) => {
 
     const {user, loading, isAuthenticated} = useSelector((state) =>state.user);
-
+    const dispatch = useDispatch();
     // useEffect(() => {
     //     if (isAuthenticated === false) {
     //       history.push("/login");
     //     }
     //   }, [history, isAuthenticated]);
+     function logoutUser() {
+   dispatch(logout());
+    alert.success("Logout Successfully");
+  }
       
   return (
    <Fragment>
@@ -54,6 +60,9 @@ const Profile = ({ history }) => {
             <div className='changePassword'>
             <Link to="me/update">Edit Profile</Link>
             </div>
+            <button className='Logout' onClick={logoutUser}>
+                Logout
+            </button>
             <div className='mobile'>
 
             </div>

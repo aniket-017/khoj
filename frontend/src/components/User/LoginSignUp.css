@@ -51,8 +51,7 @@
   transition: all 0.5s;
 }
 
-.loginForm,
-.signUpForm {
+.loginForm{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,6 +62,17 @@
   transition: all 0.5s;
 }
 
+
+.signUpForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 2vmax;
+  justify-content: space-around;
+  height: 70%;
+  transition: all 0.5s;
+}
 .signUpForm {
   transform: translateY(-100%) translateX(-100vmax);
 }
@@ -207,6 +217,7 @@ font-family:'Russo One', sans-serif;
 
   .loginBtn,
   .signUpBtn {
+    
     font: 300 2vmax 'Russo One', sans-serif;
     padding: 1.8vmax;
   }

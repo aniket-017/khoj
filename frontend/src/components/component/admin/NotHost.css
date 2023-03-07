@@ -1,0 +1,101 @@
+.NotHost{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(86, 242, 24, 0.663);
+    /* position: fixed; */
+    top: 0%;
+    left: 0;
+}
+.form{
+    margin-top: 90px;
+    background-color: white;
+    width: 30vw;
+    /* height: 70vh; */
+    box-sizing: border-box;
+    overflow: hidden;
+
+
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    margin: auto;
+    padding: 2vmax;
+    justify-content: space-around;
+    /* height: 70%; */
+    transition: all 0.5s;
+    
+}
+.Heading{
+    font: 100 1.2vmax 'Acme', sans-serif;
+    text-align: center;
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+.name{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 0.9vmax cursive;
+    outline: none;
+
+}
+.Name{
+    font: 300 2.5vmax 'Acme', sans-serif;
+}
+
+
+
+.submit {
+  border: none;
+  background-color: rgba(86, 242, 24, 0.663);;
+  color: black;
+  font: 300 0.9vmax "Roboto";
+  width: 30%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .NotHost{
+        width: 100vw;
+        height: 100vh;
+        max-width: 100%;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(86, 242, 24, 0.663);
+        /* position: fixed; */
+        top: 0%;
+        left: 0;
+    }
+    .form{
+        width: 100vw;
+    }
+
+.submit{
+    font: 300 2vmax 'Russo One', sans-serif;
+    padding: 1.8vmax;
+  }
+}

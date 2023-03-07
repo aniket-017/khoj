@@ -46,6 +46,20 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { fontFamily, padding } from "@mui/system";
 
+
+import "mapbox-gl/dist/mapbox-gl.css";
+import Map, {
+  Marker,
+  NavigationControl,
+  Popup,
+  FullscreenControl,
+  GeolocateControl,
+} from "react-map-gl";
+import {Room , Star, StarBorder}from '@material-ui/icons';
+import axios from "axios";
+import Product from "../Product";
+
+
 const ProductDetails = ( { match } ) => {
     const dispatch = useDispatch();
     let {id} = useParams() 
@@ -53,11 +67,35 @@ const ProductDetails = ( { match } ) => {
 
 
    
+
+   
     // const alert = useAlert();
     const { product, loading, error } = useSelector(
         (state) => state.productDetails
       );
     
+
+
+       //Map start
+    const [currentPlaceId, setCurrentPlaceId] = useState(null);
+    // const [lng, setLng] = useState(75.23);
+    // const [lat, setLat] = useState(19.53);
+  
+    const [viewport, setViewport] = useState({
+     
+      latitude: 18.9881,
+      longitude: 73.9635,
+      zoom: 10,
+    });
+
+    
+  const handleMarkerClick = (id) => {
+    setCurrentPlaceId(id);
+
+  };
+    //Map end
+
+
 
       // const { newReview } = useSelector(state => state);
       // const { success, error: reviewError } = newReview;
@@ -218,6 +256,54 @@ const ProductDetails = ( { match } ) => {
             <LocationOnIcon />&nbsp; Address : <span>{product.Address}</span>
             </div>
 
+
+<div>
+<Map
+      mapboxAccessToken="pk.eyJ1IjoiYW5pa2V0MTciLCJhIjoiY2xlZ3FwOW02MGJ0NTN4bWNhMXBqY25lcCJ9.qjfXDd_p2yjXQz3wa2w2UQ"
+      style={{
+          width: "100%",
+          height: "70vh",
+          borderRadius: "15px",
+          border: "2px solid red",
+         
+        }}
+        
+      initialViewState={{...viewport
+          // longitude: lng,
+          // latitude: lat,
+          // zoom: 14
+      }}
+      onViewportChange={(nextviewport) => setViewport(nextviewport)}
+        mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
+        
+        
+        >
+       
+           <Marker
+              latitude={product.lat}
+              longitude={product.long}
+              offsetLeft={-3.5 * viewport.zoom}
+              offsetTop={-7 * viewport.zoom}
+            ><Room style={{fontSize:viewport.zoom*7, color:"slateblue"}}
+            onClick={() => handleMarkerClick(product._id)}
+            />
+              
+              
+              </Marker>
+              {product._id === currentPlaceId && (
+                <Popup
+          
+                latitude={product.lat}
+                longitude={product.long}
+                closeButton={true}
+                closeOnClick={false}
+                anchor="left"
+              ><Product  product={product} style={{height:50} } /></Popup> )}
+              <NavigationControl position="bottom-right" />
+        <FullscreenControl />
+        <GeolocateControl />
+        </Map>
+</div>
             <button onClick={submitReviewToggle} className="submitReview">Submit Review</button>
 
 
@@ -278,6 +364,10 @@ const ProductDetails = ( { match } ) => {
         </div>
        
     </Fragment>)}
+
+
+
+
     </Fragment>
   )
 }

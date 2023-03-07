@@ -7,11 +7,39 @@ class ApiFeatures {
     search() {
       const keyword = this.queryStr.keyword
         ? {
+          $or: [
+            {
             // Used ternianary operator like if else
             name: {
               $regex: this.queryStr.keyword, //regularexpression
               $options: "i", // forcaseinseititititivity
             },
+          },
+          {
+            Address: {
+              $regex: this.queryStr.keyword,
+              $options: "i",
+            },
+          },
+          {
+            category: {
+              $regex: this.queryStr.keyword,
+              $options: "i",
+            },
+          },
+          // {
+          //   price: {
+          //     $eq: this.queryStr.keyword,
+          //   },
+          // },
+          {
+            ContactNo: {
+              $regex: this.queryStr.keyword,
+              $options: "i",
+            },
+          },
+        ],
+           
           }
         : {};
   
@@ -27,7 +55,7 @@ class ApiFeatures {
       //        console.log(querycopy);
       //Removing some fields for category
   
-      const removeFields = ["keyword", "page", "limit"];
+      const removeFields = ["keyword", "page", "limit", "category"];
   
       removeFields.forEach((key) => delete querycopy[key]);
   
@@ -39,6 +67,16 @@ class ApiFeatures {
   
       this.query = this.query.find(JSON.parse(queryStr));
       //        console.log(queryStr);
+
+
+       // Filter by category if it exists in the query string
+  if (this.queryStr.category) {
+    const categories = this.queryStr.category.split(",");
+    queryStr = JSON.stringify({ ...JSON.parse(queryStr), category: { $in: categories } });
+  }
+
+  this.query = this.query.find(JSON.parse(queryStr));
+
       return this;
     }
   

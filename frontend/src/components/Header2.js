@@ -1,6 +1,6 @@
 import React,{useState, Fragment} from 'react'
 import 'boxicons'
-import pic from "./Image/home_logo2.ico";
+import pic from "./Image/KhojoLogoWithHome2.png";
 import "./Header2.css";
 import SearchIcon from "@material-ui/icons/Search";
 import TuneIcon from '@mui/icons-material/Tune';
@@ -8,13 +8,16 @@ import { useNavigate } from "react-router-dom";
 import FilterPage from "./FilterPage.js"
 import Search from './Search'
 import { Button } from '@material-ui/core'
-
+import { useSelector } from "react-redux";
+import UserOptions from "../components/UserOptions";
 
 const Header2 = () => {
+    const { isAuthenticated, user } = useSelector((state) => state.user);
     const navigate = useNavigate();
     const [isShown, setIsShown] = useState(false);
   const[keyword, setkeyword] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  
 
   const searchSubmitHandler = (e) =>{
     e.preventDefault();
@@ -53,9 +56,9 @@ const Header2 = () => {
         
         </form>
 
-       <div style={{paddingTop:6}} onClick={()=>setShowSearch(!showSearch)} 
+       {/* <div style={{paddingTop:6}} onClick={()=>setShowSearch(!showSearch)} 
         className="banner_searchButton" >{showSearch ? "X" : <TuneIcon/>}
-        </div>
+        </div> */}
          
        
           
@@ -79,18 +82,28 @@ const Header2 = () => {
                             <span class="nav_name">Home</span>
                         </a>
                     </li>
-
+                    
                     <li class="nav_item">
                         <a onClick={() => navigate("/about")} href="#about" class="nav_link ">
-                        <box-icon name='book-content' type='solid' ></box-icon>
-                            <span class="nav_name">About</span>
+                        {/* <box-icon name='book-content' type='solid' ></box-icon> */}
+                        <box-icon name='map'></box-icon>
+                            <span class="nav_name">Map</span>
                         </a>
                     </li>
 
+                    {/* {isAuthenticated && <UserOptions user={user} />}  */}
                     <li class="nav_item">
-                        <a onClick={() => navigate("/login")} href="#profilo" class="nav_link ">
+                        <a onClick={()=>setShowSearch(!showSearch)}  className="nav_link new">
+                        <box-icon name='filter-alt'></box-icon>
+                            <span class="nav_name">Filter</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav_item">
+                        <a onClick={() => navigate("/admin/product")} href="#profilo" class="nav_link ">
                             <box-icon name='user'></box-icon>
-                            <span class="nav_name">Profilo</span>
+                            <span class="nav_name">Host</span>
                         </a>
                     </li>
 
@@ -100,6 +113,8 @@ const Header2 = () => {
                             <span class="nav_name">Login</span>
                         </a>
                     </li>
+
+                   
                 </ul>
             </div>
         </nav>

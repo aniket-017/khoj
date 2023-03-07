@@ -22,15 +22,23 @@ app.use(fileUpload());
 //Route import
 const product = require("./routes/productRoute");
 const user = require("./routes/userRoute");
+const host = require("./routes/hostRoutes");
 
 app.use("/api/v1", product);
 app.use("/api/v1", user);
+app.use("/api/v1", host);
 
-app.use(express.static(path.join(__dirname,"../frontend/build")));
+const MY_VARIABLE = process.env.REACT_APP_MAPBOX;
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-  });
+app.get('/api/v1/my-variable', (req, res) => {
+  res.json({ value: MY_VARIABLE });
+});
+
+// app.use(express.static(path.join(__dirname,"../frontend/build")));
+
+// app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+//   });
 //Middleware for error
 app.use(errorMiddleware);
 

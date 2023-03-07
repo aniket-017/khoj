@@ -45,6 +45,12 @@ const productSchema = new mongoose.Schema({
   ContactNo: {
     type: String,
     required: [true, "Please Enter product ContactNo."],
+    validate: {
+      validator: function(v) {
+        return /^\d{10}$/.test(v);
+      },
+      message: props => `${props.value} is not a valid phone number! Please enter a 10-digit phone number.`,
+    },
   },
   OtherFacility: {
     type: String,
@@ -84,6 +90,14 @@ const productSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  lat:{
+    type : Number,
+    require: true,
+  },
+  long:{
+    type : Number,
+    require: true,
+},
   reviews: [
     {
       name: {

@@ -3,6 +3,11 @@
   margin-right: 13%;
 }
 
+
+.new{
+  display: none;
+}
+
 .productsHeading {
   margin: 2vmax auto;
   margin-top: 8vmax;
@@ -26,7 +31,7 @@
   width: 10vmax;
   
  
-  position: absolute;
+  position: fixed;
   top: 10vmax;
   left: 4vmax;
 }
@@ -60,7 +65,69 @@
 .typography {
   color: blueviolet;
 }
+
+h4{
+  text-align: center;
+  font-family:"Oswald";
+  font-weight: 900;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  
+}
+
+.filter-buttons1 {
+  /* background-color: #fff; */
+  margin-right: 0.5rem;
+  border: none;
+  background-color: black;
+  color: white;
+  /* color: chartreuse; */
+  font: 400 1.1vmax "Roboto";
+  font-family:"Oswald";
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+.filter-buttons2 {
+  /* background-color: #fff; */
+  margin-right: 1rem;
+  border: none;
+  background-color: orangered  ;
+  color: white;
+  /* color: chartreuse; */
+  font: 400 1.1vmax "Roboto";
+  font-family:"Oswald";
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+.filter-buttons button:hover {
+
+  color:blueviolet;
+  background-color: #f8f8f8;
+  border-color: #999;
+  color: #666;
+}
+
+
 @media only screen and (max-device-width: 600px) {
+  .new{
+    display: block;
+  }
   .aniket{
       margin-left: 0%;
       margin-right: 0%;
@@ -82,20 +149,35 @@
 
 @media screen and (max-width: 600px) {
   .productsHeading{
-    margin-top: 120px;
+    margin-top: 100px;
     
     font: 900 2.8vmax 'Acme', sans-serif;
     width: 80%;
   }
+
+  .filter-buttons1 {
+    /* font-family:Grenze Gotisch ;
+    font-weight: 500 ; */
+    font: 500 2.3vmax 'Acme', sans-serif;
+    height: 50px;
+  }
+
+  .filter-buttons2 {
+    /* font-family:Grenze Gotisch ;
+    font-weight: 500 ; */
+    font: 500 2.3vmax 'Acme', sans-serif;
+    height: 50px;
+  }
+
     .filterBox {
       
     
 
 
-      width: 40vmax;
+      /* width: 40vmax; */
       position: static;
     
-      margin: auto;
+      /* margin: auto; */
     }
     h2{
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -113,15 +195,18 @@
       padding: 5px;
      
     }
+   
     .filterBox{
       display:none; 
     }
   .filterBox_mobile{
     /* display:none; */
     /* border:solid rgba(0, 0, 0, 0.534); */
+    margin-top: 140px;
+    width: 100%;
     border-radius: 10px;
-    padding:1.5rem;
-    height:90vh;
+    /* padding:1.5rem; */
+    height:80vh;
     /* width:100vw; */
     /* box-shadow: 5px 10px #888888; */
     /* margin-top: 50px; */
@@ -131,12 +216,14 @@
 
  .slider_mobile{
   margin-top: 25px;
-  margin-left: 20px;
- 
+  margin-left: 60px;
+ /* padding-left: 200px; */
   /* margin-right: 50px; */
   position: relative;
   right:20px;
   /* left:20px; */
+ 
+
  
   
   

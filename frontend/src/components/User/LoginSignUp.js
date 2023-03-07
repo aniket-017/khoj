@@ -166,13 +166,16 @@ const LoginSignUp = ({history}) => {
            <LockOpenIcon />
            <input
              type="password"
-             placeholder="Password"
+             placeholder="Set Password"
              required
              name="password"
              value={password}
              onChange={registerDataChange}
            />
          </div>
+         
+
+         
 
          <div id="registerImage">
            <img src={avatarPreview} alt="Avatar Preview" />
