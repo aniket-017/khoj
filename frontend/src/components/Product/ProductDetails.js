@@ -233,27 +233,27 @@ const ProductDetails = ( { match } ) => {
             </div>
 
             <div className="detailsBlock-4" >
-            <ElectricBoltIcon />&nbsp; Light Facility : <span>{product.LightFacility}</span>
+            <ElectricBoltIcon className="Icon" />&nbsp; Light Facility : <span>{product.LightFacility}</span>
             </div>
 
             <div className="detailsBlock-4" >
-            <RouterIcon />&nbsp; Wifi Facility : <span>{product.WifiFacility}</span>
+            <RouterIcon className="Icon"  />&nbsp; Wifi Facility : <span>{product.WifiFacility}</span>
             </div>
 
             <div className="detailsBlock-4" >
-            <RestaurantIcon />&nbsp;  Mess Facility : <span>{product.MessFacility}</span>
+            <RestaurantIcon className="Icon"  />&nbsp;  Mess Facility : <span>{product.MessFacility}</span>
             </div>
 
             <div className="detailsBlock-4" >
-            <AccessTimeIcon />&nbsp;  In Out Time : <span>{product.InOutTime}</span>
+            <AccessTimeIcon className="Icon"  />&nbsp;  In Out Time : <span>{product.InOutTime}</span>
             </div>
 
             <div className="detailsBlock-4" >
-            <CallIcon/>&nbsp; Contact Number : <span>{product.ContactNo}</span>
+            <CallIcon className="Icon"  />&nbsp; Contact Number : <span>{product.ContactNo}</span>
             </div>
 
             <div className="detailsBlock-4" >
-            <LocationOnIcon />&nbsp; Address : <span>{product.Address}</span>
+            <LocationOnIcon className="Icon"  />&nbsp; Address : <span>{product.Address}</span>
             </div>
 
 

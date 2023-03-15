@@ -39,6 +39,7 @@ const Mymap = ({product}) => {
     zoom: 12,
   });
 
+  const isMobile = window.innerHeight <= 740;
 
 
   const handleMarkerClick = (id) => {
@@ -70,16 +71,19 @@ const Mymap = ({product}) => {
   
     <div className='mp'>
     <MetaData title="खोजो MAP" />
+
       <Map
       mapboxAccessToken="pk.eyJ1IjoiYW5pa2V0MTciLCJhIjoiY2xlZ3FwOW02MGJ0NTN4bWNhMXBqY25lcCJ9.qjfXDd_p2yjXQz3wa2w2UQ"
       // mapboxAccessToken = {myVariable}
 
       style={{
           width: "100%",
-          height: "80vh",
+          height: isMobile ? "70vh" : "79vh",
           borderRadius: "15px",
           border: "2px solid red",
          
+
+          
         }}
         
       initialViewState={{...viewport

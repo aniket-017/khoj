@@ -8,7 +8,8 @@ import PaymentsIcon from '@mui/icons-material/Payments';
 import { height } from "@mui/system";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
+
 
 const categories = [
     "Rented Rooms",
@@ -21,6 +22,8 @@ const categories = [
 
 
 const FilterPage = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/"; // check if current path is home page
 
   const navigate = useNavigate();
   
@@ -78,8 +81,9 @@ const FilterPage = () => {
       }, [dispatch, keyword,currentPage,price,category,ratings,alert,error]);
     
   return (
-    
-    <div className="FilterPage" className={style} >
+    <div>
+    {isHomePage && 
+    <div className="FilterPage"  >
   
     {/* <div className="filterBox_mobile" data-aos="flip-right" > */}
     <div className="filterBox_mobile" data-aos="fade-up" >
@@ -155,6 +159,7 @@ const FilterPage = () => {
           
        
     
+    </div>}
     </div>
   )
 }

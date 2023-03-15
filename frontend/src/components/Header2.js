@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import UserOptions from "../components/UserOptions";
 
 const Header2 = () => {
+    
     const { isAuthenticated, user } = useSelector((state) => state.user);
     const navigate = useNavigate();
     const [isShown, setIsShown] = useState(false);
@@ -43,6 +44,7 @@ const Header2 = () => {
             <div className="header_center">
             <form  onSubmit={searchSubmitHandler}>
           <input
+          
             type="text"
             placeholder="Search the accomodation"
             onChange={(e) => setkeyword(e.target.value)}
@@ -92,13 +94,20 @@ const Header2 = () => {
                     </li>
 
                     {/* {isAuthenticated && <UserOptions user={user} />}  */}
-                    <li class="nav_item">
+                    {/* <li class="nav_item">
                         <a onClick={()=>setShowSearch(!showSearch)}  className="nav_link new">
                         <box-icon name='filter-alt'></box-icon>
                             <span class="nav_name">Filter</span>
                         </a>
-                    </li>
+                    </li> */}
 
+
+                    <li class="nav_item">
+                        <a onClick={()=>setShowSearch(!showSearch)} class="nav_link filter">
+                        <box-icon name='filter-alt'></box-icon>
+                            <span class="nav_name">Filter</span>
+                        </a>
+                    </li>
 
                     <li class="nav_item">
                         <a onClick={() => navigate("/admin/product")} href="#profilo" class="nav_link ">
