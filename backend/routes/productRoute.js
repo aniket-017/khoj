@@ -10,7 +10,7 @@ const {
   deleteReview,
   getEachProducts,
   resetFilters,
-} = require("../controllers/productcontroller");
+} = require("../controllers/productcontroller.js");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 const router = express.Router();
 
